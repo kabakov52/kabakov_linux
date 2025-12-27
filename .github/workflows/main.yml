@@ -38,7 +38,6 @@ jobs:
           OWNER_LC="${{ steps.lower_owner.outputs.owner_lc }}"
           IMAGE_BASE="ghcr.io/${OWNER_LC}/python-app"
 
-          # Сборка и пуш
           docker build --target test -t "${IMAGE_BASE}:test-${{ github.sha }}" .
           docker push "${IMAGE_BASE}:test-${{ github.sha }}"
 
