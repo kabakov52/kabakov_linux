@@ -87,9 +87,4 @@ jobs:
             podman rm -f python-app || true
 
             podman run --replace -d --name python-app --network host -p 8060:8060 $IMAGE_RUNTIME
-
-            podman images --format "{{.Repository}}:{{.Tag}}" \
-            | grep "ghcr.io/${OWNER_LC}/python-app:runtime-" \
-            | grep -v "${{ github.sha }}" \
-            | xargs -r podman rmi -f || true
             
