@@ -56,6 +56,6 @@ RUN useradd -u 1000 appuser && \
 USER appuser
 ENV PATH="/home/appuser/.local/bin:${PATH}"
 
-EXPOSE 8062
+EXPOSE 8060
 
-CMD ["python", "-m", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8062"]
+CMD ["python", "-m", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8060"]
