@@ -1,4 +1,4 @@
-name: CI/CD Podman Python App with GHCR
+name: CI/CD KABAKOV
 
 on:
   push:
