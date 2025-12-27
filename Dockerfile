@@ -34,6 +34,9 @@ RUN apt-get update \
  && apt-get install -y --no-install-recommends gcc libpq5 \
  && rm -rf /var/lib/apt/lists/*
 
+ RUN python -m pip install --no-cache-dir -e . \
+ && python -m pip install --no-cache-dir pytest
+
 COPY --from=builder "${VENV_PATH}" "${VENV_PATH}"
 
 COPY pyproject.toml ./
